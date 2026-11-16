@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instrutor Gilmar | Sua conquista começa aqui</title>
+<meta name="description" content="Aulas de direção com Instrutor Gilmar. Carro automático e elétrico, conforto e dedicação.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --black:#090909;
+    --dark:#151515;
+    --yellow:#ffd600;
+    --white:#fff;
+    --gray:#f4f4f4;
+    --muted:#777;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:#222;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,92%);margin:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 25px;border-radius:6px;font-weight:900;font-size:14px;transition:.3s;border:2px solid transparent}
+.btn-yellow{background:var(--yellow);color:#090909}
+.btn-yellow:hover{background:white;transform:translateY(-4px);box-shadow:0 10px 30px #ffd60044}
+.btn-dark{background:#111;color:white}
+.btn-dark:hover{background:#333;transform:translateY(-3px)}
+section{scroll-margin-top:85px}
+
+/* HEADER */
+header{height:82px;background:#090909;color:white;display:flex;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:3px solid var(--yellow)}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Montserrat;font-size:24px;font-weight:900;letter-spacing:-1px}
+.logo span{display:block;color:var(--yellow);font-size:10px;letter-spacing:3px}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{font-size:13px;font-weight:800;color:white;transition:.2s}
+.menu a:hover{color:var(--yellow)}
+.menu .btn{color:#111}
+.menu-toggle{display:none;background:var(--yellow);border:0;padding:10px 14px;font-size:22px;border-radius:5px}
+
+/* HERO */
+.hero{background:#090909;color:white;padding:65px 0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:500px;height:500px;background:#ffd60012;border-radius:50%;right:-150px;top:-180px;filter:blur(20px)}
+.hero-grid{display:grid;grid-template-columns:.85fr 1.35fr;gap:35px;align-items:center;position:relative;z-index:1}
+.tag{display:inline-block;background:#242424;border-left:4px solid var(--yellow);padding:11px 15px;color:var(--yellow);font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:25px}
+.hero h1{font-family:Montserrat;font-size:clamp(40px,5vw,66px);line-height:1.06;letter-spacing:-2.5px;margin-bottom:24px}
+.hero h1 span{color:var(--yellow)}
+.hero p{color:#c2c2c2;font-size:16px;line-height:1.8;margin-bottom:28px;max-width:440px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:30px;color:#ccc;font-size:13px}
+.hero-note strong{color:var(--yellow)}
+.hero-image{height:570px;background:#202020;border:2px solid #333;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-image img{width:100%;height:100%;object-fit:contain;display:block;filter:none!important;opacity:1!important;transition:.7s}
+.hero-image:hover img{transform:scale(1.035)}
+.image-label{position:absolute;bottom:20px;left:20px;background:var(--yellow);color:#111;padding:12px 17px;font-weight:900;font-size:12px;border-radius:4px}
+
+/* BENEFÍCIOS */
+.benefits{background:var(--yellow);padding:27px 0}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.benefit{display:flex;align-items:center;gap:14px}
+.benefit-icon{width:48px;height:48px;background:#111;color:var(--yellow);display:grid;place-items:center;border-radius:7px;font-size:23px}
+.benefit h3{font-size:14px;font-weight:900}
+.benefit p{font-size:12px;color:#333;margin-top:4px}
+
+/* GALERIA */
+.students{background:#f4f4f4;padding:95px 0}
+.heading{text-align:center;max-width:760px;margin:0 auto 45px}
+.eyebrow{color:#b18e00;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.heading h2{font-family:Montserrat;font-size:clamp(32px,4vw,48px);line-height:1.12;color:#111;letter-spacing:-1.5px;margin-bottom:17px}
+.heading h2 span{color:#d3a900}
+.heading p{color:#666;line-height:1.8;font-size:15px}
+.students-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.student-card{height:440px;position:relative;overflow:hidden;background:#ddd;border-radius:10px;cursor:pointer;box-shadow:0 12px 35px #00000018}
+.student-card img{width:100%;height:100%;object-fit:cover;display:block;filter:none!important;opacity:1!important;transition:transform .7s}
+.student-card:hover img{transform:scale(1.07)}
+.student-overlay{position:absolute;bottom:0;left:0;right:0;padding:50px 25px 22px;background:linear-gradient(transparent,#000c);color:white;font-family:Montserrat;font-size:17px;font-weight:900}
+.student-overlay span{display:block;color:var(--yellow);font-family:'DM Sans';font-size:11px;letter-spacing:2px;margin-bottom:7px;text-transform:uppercase}
+.gallery-cta{text-align:center;margin-top:40px}
+.gallery-cta p{color:#555;margin-bottom:17px;font-size:14px}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:#000f;z-index:3000;display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:94vw;max-height:88vh;object-fit:contain}
+.lightbox button{position:absolute;top:20px;right:25px;background:var(--yellow);border:0;width:45px;height:45px;border-radius:50%;font-size:27px;cursor:pointer}
+
+/* SOBRE */
+.about{padding:100px 0;background:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-photo{height:540px;border-radius:10px;overflow:hidden;background:#eee}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:none!important}
+.about-content h2{font-family:Montserrat;font-size:42px;line-height:1.15;margin-bottom:22px;color:#111}
+.about-content h2 span{color:#d0a700}
+.about-content p{color:#777;line-height:1.9;margin-bottom:17px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:28px 0}
+.stat{padding:20px;background:#111;color:white;border-bottom:4px solid var(--yellow);border-radius:5px}
+.stat strong{font-family:Montserrat;font-size:29px;color:var(--yellow);display:block}
+.stat span{font-size:12px;color:#ccc}
+
+/* SERVIÇOS */
+.services{padding:95px 0;background:#111;color:white}
+.services .heading h2{color:white}
+.services .heading p{color:#aaa}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{padding:32px 27px;background:#1d1d1d;border:1px solid #333;border-radius:8px;transition:.3s}
+.service-card:hover{transform:translateY(-8px);border-color:var(--yellow);box-shadow:0 15px 30px #ffd60012}
+.service-icon{width:55px;height:55px;background:var(--yellow);color:#111;display:grid;place-items:center;font-size:24px;border-radius:7px;margin-bottom:22px}
+.service-card h3{font-family:Montserrat;font-size:18px;margin-bottom:13px}
+.service-card p{color:#aaa;font-size:14px;line-height:1.8}
+
+/* CARRO */
+.car-section{padding:90px 0;background:var(--yellow)}
+.car-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.car-content h2{font-family:Montserrat;font-size:clamp(33px,4vw,47px);line-height:1.13;margin-bottom:20px;color:#111}
+.car-content p{line-height:1.8;color:#333;margin-bottom:24px}
+.car-features{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:28px}
+.car-feature{font-size:13px;font-weight:900}
+.car-photo{height:390px;border-radius:10px;overflow:hidden;background:#222}
+.car-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.car-photo img{filter:none!important}
+
+/* CTA */
+.cta{padding:90px 0;text-align:center;background:#f4f4f4}
+.cta h2{font-family:Montserrat;font-size:clamp(31px,4vw,47px);margin-bottom:18px;color:#111}
+.cta p{color:#777;margin-bottom:28px;line-height:1.8}
+
+/* FOOTER */
+footer{background:#090909;color:white;padding:45px 0 25px;border-top:4px solid var(--yellow)}
+.footer-content{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-bottom:28px;border-bottom:1px solid #333}
+.footer-brand p{color:#999;font-size:12px;margin-top:10px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:#bbb;font-size:13px}
+.footer-links a:hover{color:var(--yellow)}
+.copyright{text-align:center;padding-top:22px;color:#777;font-size:11px}
+
+/* WHATSAPP */
+.whatsapp-float{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:#20c765;color:white;display:grid;place-items:center;font-size:28px;z-index:999;box-shadow:0 8px 25px #0003;transition:.3s}
+.whatsapp-float:hover{transform:translateY(-5px)}
+
+/* ANIMAÇÕES */
+.reveal{opacity:0;transform:translateY(30px);transition:.8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes entrance{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.hero-content{animation:entrance .8s ease both}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.hero-image{height:460px}
+.about-grid,.car-grid{grid-template-columns:1fr;gap:35px}
+.benefit-grid{grid-template-columns:1fr}
+.students-grid{grid-template-columns:repeat(2,1fr)}
+.service-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+.menu-toggle{display:block}
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;padding:24px 5%;background:#090909;flex-direction:column;align-items:stretch;gap:20px}
+.menu.active{display:flex}
+.menu .btn{width:100%}
+.hero{padding:40px 0}
+.hero h1{font-size:43px}
+.hero-image{height:330px;min-height:250px}
+.students{padding:65px 0}
+.student-card{height:330px}
+.about{padding:70px 0}
+.about-photo{height:400px}
+.about-content h2{font-size:34px}
+.service-grid{grid-template-columns:1fr}
+.car-photo{height:300px}
+.footer-content{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+.hero h1{font-size:37px}
+.hero-buttons{flex-direction:column}
+.hero-buttons .btn{width:100%}
+.students-grid{grid-template-columns:1fr}
+.student-card{height:390px}
+.heading h2{font-size:32px}
+.about-photo{height:340px}
+.car-features{grid-template-columns:1fr}
+.whatsapp-float{width:54px;height:54px;right:15px;bottom:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+<div class="container nav">
+<a href="#inicio" class="logo">GILMAR<span>INSTRUTOR Autonomo.</span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+<nav class="menu" id="menu">
+<a href="#inicio">Início</a>
+<a href="#alunos">Alunos</a>
+<a href="#sobre">Instrutor</a>
+<a href="#aulas">Aulas</a>
+<a href="#veiculo">Veículo</a>
+<a href="https://wa.me/5531989335938" target="_blank" class="btn btn-yellow">Agendar aula ↗</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- BANNER -->
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div class="hero-content">
+<div class="tag">★ APRENDA A DIRIGIR COM CONFIANÇA</div>
+<h1>Sua conquista começa com uma <span>boa direção.</span></h1>
+<p>Aprenda com tranquilidade, segurança e confiança. Aulas com instrutor experiente e veículo automático para tornar sua experiência ainda melhor.</p>
+<div class="hero-buttons">
+<a class="btn btn-yellow" href="https://wa.me/5531989335938?text=Olá,%20Gilmar!%20Quero%20informações%20sobre%20as%20aulas." target="_blank">QUERO COMEÇAR AGORA ↗</a>
+<a class="btn btn-dark" href="#sobre">CONHEÇA O INSTRUTOR</a>
+</div>
+<div class="hero-note">✓ <strong>Mais confiança ao volante</strong> — ensino com paciência e dedicação.</div>
+</div>
+<div class="hero-image">
+<img src="/img/d46120a0-876d-479d-8e37-a16e176ead1c.jpg" alt="Carro utilizado nas aulas">
+<div class="image-label">🚗 CARRO AUTOMÁTICO E ELÉTRICO</div>
+</div>
+</div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="benefits">
+<div class="container benefit-grid">
+<div class="benefit"><div class="benefit-icon">🚘</div><div><h3>CARRO AUTOMÁTICO</h3><p>Mais praticidade nas aulas</p></div></div>
+<div class="benefit"><div class="benefit-icon">❄️</div><div><h3>MAIS CONFORTO</h3><p>Veículo com ar-condicionado</p></div></div>
+<div class="benefit"><div class="benefit-icon">🎯</div><div><h3>ENSINO DEDICADO</h3><p>Respeito ao seu ritmo</p></div></div>
+</div>
+</section>
+
+<!-- GALERIA DOS ALUNOS -->
+<section class="students" id="alunos">
+<div class="container">
+<div class="heading reveal">
+<div class="eyebrow">NOSSAS CONQUISTAS</div>
+<h2>Uma carteira conquistada. <span>Um sonho realizado!</span></h2>
+<p>Confira alguns momentos especiais dos alunos que confiaram no trabalho do Instrutor Gilmar. Sua conquista também pode estar aqui!</p>
+</div>
+
+<div class="students-grid">
+
+<div class="student-card reveal"><img src="/img/IMG1.jpeg" alt="Aluno comemorando sua CNH" loading="lazy"><div class="student-overlay"><span>Conquista realizada</span>Mais um sonho realizado! 🏆</div></div>
+
+<div class="student-card reveal"><img src="/img/IMG2.jpeg" alt="Aluna comemorando sua CNH" loading="lazy"><div class="student-overlay"><span>Nova habilitada</span>Parabéns pela conquista! 🎉</div></div>
+
+<div class="student-card reveal"><img src="/img/IMG3.jpeg" alt="Aluno com sua carteira" loading="lazy"><div class="student-overlay"><span>Missão cumprida</span>Uma nova jornada começa!</div></div>
+
+<div class="student-card reveal"><img src="/img/d46120a0-876d-479d-8e37-a16e176ead1c.jpg" alt="Aluno comemorando aprovação" loading="lazy"><div class="student-overlay"><span>Mais uma aprovação</span>Você conseguiu! 🚗</div></div>
+
+<div class="student-card reveal"><img src="/img/WhatsApp Image 2026-11-16 at 09.07.06.jpeg" alt="Aluno com instrutor" loading="lazy"><div class="student-overlay"><span>História de sucesso</span>Parabéns pela CNH!</div></div>
+
+</div>
+
+<div class="gallery-cta reveal">
+<p>Quer fazer parte dessa galeria de conquistas?</p>
+<a class="btn btn-yellow" href="https://wa.me/5531989335938?text=Olá,%20Gilmar!%20Quero%20conquistar%20minha%20CNH." target="_blank">QUERO MINHA CNH ↗</a>
+</div>
+</div>
+</section>
+
+<!-- AMPLIAR FOTO -->
+<div class="lightbox" id="lightbox">
+<button id="lightboxClose" aria-label="Fechar">×</button>
+<img src="" id="lightboxImage" alt="Foto ampliada">
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+<div class="container about-grid">
+<div class="about-photo reveal"><img src="/img/gilmar-original.jpeg" alt="Instrutor Gilmar"></div>
+<div class="about-content reveal">
+<div class="eyebrow">CONHEÇA SEU INSTRUTOR</div>
+<h2>Aprender a dirigir pode ser <span>mais tranquilo.</span></h2>
+<p>Com experiência e dedicação, o Instrutor Gilmar oferece um acompanhamento atencioso para quem deseja desenvolver confiança e segurança na direção.</p>
+<p>Cada aula é conduzida com paciência, orientação e atenção às necessidades de cada aluno.</p>
+<div class="stats">
+<div class="stat"><strong>15+</strong><span>Anos de experiência</span></div>
+<div class="stat"><strong>100%</strong><span>Dedicação ao aluno</span></div>
+</div>
+<a class="btn btn-yellow" href="https://wa.me/5531989335938" target="_blank">FALE COM O INSTRUTOR ↗</a>
+</div>
+</div>
+</section>
+
+<!-- AULAS -->
+<section class="services" id="aulas">
+<div class="container">
+<div class="heading reveal">
+<div class="eyebrow">APRENDA NO SEU RITMO</div>
+<h2>Uma experiência de direção melhor.</h2>
+<p>Orientação e acompanhamento para desenvolver suas habilidades.</p>
+</div>
+<div class="service-grid">
+<div class="service-card reveal"><div class="service-icon">🚗</div><h3>Aulas práticas</h3><p>Desenvolva suas habilidades ao volante com orientação e acompanhamento durante a prática.</p></div>
+<div class="service-card reveal"><div class="service-icon">🅿️</div><h3>Estacionamento</h3><p>Aprenda técnicas e pratique manobras para estacionar com mais segurança e confiança.</p></div>
+<div class="service-card reveal"><div class="service-icon">🛣️</div><h3>Prática no trânsito</h3><p>Aprimore sua percepção, controle do veículo e comportamento em diferentes situações.</p></div>
+</div>
+</div>
+</section>
+
+<!-- VEÍCULO -->
+<section class="car-section" id="veiculo">
+<div class="container car-grid">
+<div class="car-content reveal">
+<div class="eyebrow">TECNOLOGIA E CONFORTO</div>
+<h2>Uma nova forma de aprender a dirigir.</h2>
+<p>As aulas são realizadas em veículo automático e elétrico, proporcionando uma experiência de condução mais simples, confortável e agradável.</p>
+<div class="car-features">
+<div class="car-feature">✓ Câmbio automático</div>
+<div class="car-feature">✓ Ar-condicionado</div>
+<div class="car-feature">✓ Condução confortável</div>
+<div class="car-feature">✓ Mais praticidade</div>
+</div>
+<a class="btn btn-dark" href="https://wa.me/5531989335938" target="_blank">CONSULTAR DISPONIBILIDADE ↗</a>
+</div>
+<div class="car-photo reveal"><img src="/img/WhatsApp%20Image%202026-11-16%20at%2009.07.06.jpeg" alt="Veículo das aulas"></div>
+</div>
+</section>
+
+<!-- CONTATO -->
+<section class="cta">
+<div class="container reveal">
+<div class="eyebrow">SUA CONQUISTA COMEÇA AQUI</div>
+<h2>Está pronto para dirigir com confiança?</h2>
+<p>Entre em contato, tire suas dúvidas e consulte os horários disponíveis para suas aulas.</p>
+<a class="btn btn-yellow" href="https://wa.me/5531989335938?text=Olá,%20Gilmar!%20Quero%20agendar%20uma%20aula." target="_blank">AGENDAR PELO WHATSAPP ↗</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<a href="#inicio" class="logo">GILMAR<span>INSTRUTOR DE DIREÇÃO</span></a>
+<p>Ensino, paciência e confiança ao volante.</p>
+</div>
+<div class="footer-links">
+<a href="#inicio">Início</a>
+<a href="#alunos">Alunos</a>
+<a href="#sobre">Sobre</a>
+<a href="#aulas">Aulas</a>
+<a href="https://www.instagram.com/gilmar_instrutor/" target="_blank">Instagram</a>
+<a href="https://wa.me/5531989335938" target="_blank">WhatsApp</a>
+</div>
+</div>
+<div class="copyright">© <span id="year"></span> Instrutor Gilmar. Todos os direitos reservados.</div>
+</div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5531989335938?text=Olá,%20Gilmar!%20Gostaria%20de%20informações." target="_blank" aria-label="WhatsApp">☎</a>
+
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const menu=document.getElementById('menu');
+const header=document.getElementById('header');
+
+menuToggle.addEventListener('click',()=>{
+    menu.classList.toggle('active');
+    menuToggle.textContent=menu.classList.contains('active')?'×':'☰';
+});
+
+document.querySelectorAll('.menu a').forEach(link=>{
+    link.addEventListener('click',()=>{
+        menu.classList.remove('active');
+        menuToggle.textContent='☰';
+    });
+});
+
+window.addEventListener('scroll',()=>{
+    header.classList.toggle('scrolled',window.scrollY>30);
+});
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+},{threshold:.1});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* AMPLIAR FOTOS DOS ALUNOS */
+const lightbox=document.getElementById('lightbox');
+const lightboxImage=document.getElementById('lightboxImage');
+
+document.querySelectorAll('.student-card img').forEach(img=>{
+    img.addEventListener('click',()=>{
+        lightboxImage.src=img.src;
+        lightbox.classList.add('active');
+    });
+});
+
+function closeLightbox(){
+    lightbox.classList.remove('active');
+    lightboxImage.src='';
+}
+
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{
+    if(e.target===lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') closeLightbox();
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
